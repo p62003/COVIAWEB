@@ -1,0 +1,407 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+/**
+* Global styles - Final Clean Version
+ */
+
+/* --- 全站字體設定 --- */
+:root {
+  --ifm-font-family-base: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+
+  /* 白天主色調 (橘黃棕藍灰系) */
+  --ifm-color-primary: #F2A51E;
+  --ifm-color-primary-dark: #E39025;
+  --ifm-color-primary-darker: #8D7051;
+  --ifm-color-primary-darkest: #5B4937;
+  --ifm-color-primary-light: #7B7E74;
+  --ifm-color-primary-lighter: #BAC7E5;
+  --ifm-color-primary-lightest: #BAC7E5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(242, 165, 30, 0.2);
+  /* 白天程式碼高亮 */
+}
+
+/* --- 白天模式 (背景、Navbar、文字) --- */
+html[data-theme='light'] {
+  --ifm-background-color: #ffffff;
+  /* 主背景：淡藍色 */
+  --ifm-navbar-background-color: #7B7E74;
+  /* Header：黑色 */
+  --ifm-navbar-link-color: #ffffff;
+  /* Header字：白色 */
+}
+
+/* --- 暗黑模式 (背景、Navbar、文字) --- */
+html[data-theme='dark'] {
+  --ifm-background-color: #242222;
+  /* 主背景：黑色 */
+  --ifm-navbar-background-color: #7B7E74;
+  /* Header：黑色 */
+  --ifm-navbar-link-color: #ffffff;
+  /* Header字：白色 */
+  --ifm-color-primary: #F2A51E;
+  /* 主色橘黃（暗黑也維持） */
+  --ifm-color-primary-dark: #E39025;
+  --ifm-color-primary-darker: #8D7051;
+  --ifm-color-primary-darkest: #5B4937;
+  --ifm-color-primary-light: #7B7E74;
+  --ifm-color-primary-lighter: #BAC7E5;
+  --ifm-color-primary-lightest: #BAC7E5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(242, 165, 30, 0.2);
+  /* 暗黑程式碼高亮 */
+}
+
+[data-theme='light'] .hero--primary {
+  background-color: #ffffff;
+  color: #000000;
+  /* 黑色字 */
+  background-size: cover;
+  background-position: center;
+}
+
+[data-theme='dark'] .hero--primary {
+  background-color: #242222;
+  color: #ffffff;
+  /* 白色字 */
+  background-size: cover;
+  background-position: center;
+}
+
+/* HERO區塊內容 */
+
+.heroBanner {
+  padding: 6rem 2rem;
+}
+
+.heroWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroLeft {
+  flex: 1;
+  text-align: left;
+}
+
+.heroRight {
+  flex: 1;
+  text-align: left;
+}
+
+.heroTitle {
+  font-family: 'Anton', sans-serif;
+  font-size: 300px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.heroSubtitle {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* 宣言 */
+
+[data-theme='light'] .heroDeclarationTitle {
+  color: #b8860b;
+  /* 白天用暗金色 */
+}
+
+[data-theme='dark'] .heroDeclarationTitle {
+  color: #ffcc00;
+  /* 黑夜用亮黃色 */
+}
+
+.heroDeclarationTitle {
+  display: block;
+  font-size: 1.5rem;
+  /* 比正文大 */
+  font-weight: 700;
+  /* 加粗 */
+  margin-bottom: 1rem;
+}
+
+.heroDeclaration {
+  padding: 2rem 0;
+  background-color: var(--ifm-background-color);
+  /* 跟主背景一致 */
+  text-align: center;
+}
+
+.heroDeclarationText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  /* 文字內容靠左排列 */
+}
+
+.heroDeclarationText br {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 150px;
+  }
+}
+
+/* 補強小螢幕 RWD */
+@media (max-width: 768px) {
+  .heroWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroLeft,
+  .heroRight {
+    flex: none;
+  }
+
+  .heroTitle {
+    font-size: 4rem;
+  }
+
+  .heroSubtitle {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+
+/* --- 主體區域 --- */
+body {
+  font-family: var(--ifm-font-family-base);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.main-wrapper {
+  background-color: var(--ifm-background-color);
+}
+
+/* --- 卡片樣式 --- */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 正文文字色 --- */
+html[data-theme='light'] body {
+  color: #333333;
+}
+
+html[data-theme='dark'] body {
+  color: #E6EEF9;
+}
+
+/* --- 鏈結與按鈕 hover 效果 --- */
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+.button:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+/* --- Footer背景色設定 --- */
+.footer {
+  background-color: #7B7E74 !important;
+}
+
+/* Footer文字顏色可以視需求選擇加白色或深色，這樣確保可讀性 */
+.footer a,
+.footer p,
+.footer li {
+  color: #ffffff !important;
+}
+
+/* 提示框（TIPS / INFO / WARNING） */
+html[data-theme='light'] .alert {
+  background-color: #BAC7E5;
+  border-left: 4px solid #F2A51E;
+  color: #333333;
+}
+
+html[data-theme='dark'] .alert {
+  background-color: #282a36;
+  border-left: 4px solid #F2A51E;
+  color: #E6EEF9;
+}
+
+/* --- Code Block（程式碼框）背景色調整 --- */
+
+/* 白天模式：Code區域背景也改成淡藍 */
+html[data-theme='light'] .codeBlockContainer_Ckt0 {
+  --prism-background-color: #BAC7E5;
+  /* 白天模式：淡藍色背景 */
+}
+
+html[data-theme='light'] pre.prism-code {
+  background-color: #BAC7E5 !important;
+}
+
+
+/* --- Blog 文章裡的小標籤顏色調整 --- */
+
+/* 小標籤（Tag）背景 */
+html[data-theme='light'] .tags_jXut a {
+  background-color: #7B7E74;
+  /* 橘黃底 */
+  color: #ffffff;
+  /* 黑字 */
+  border: none;
+}
+
+/* 搜尋結果卡片（li.resultItem_eGY2）的背景色設定 */
+
+/* 白天模式 */
+html[data-theme='light'] .resultItem_eGY2 {
+  background-color: #BAC7E5;
+  /* 卡片底白色 */
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 暗黑模式 */
+html[data-theme='dark'] .resultItem_eGY2 {
+  background-color: #282a36;
+  /* 深灰藍卡片底 */
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 搜尋結果：標題與連結顏色修正 */
+
+/* 白天模式 */
+html[data-theme='light'] .resultTitle_OJPc,
+html[data-theme='light'] .resultLink_sJG6 {
+  color: #282a36;
+  /* 橘黃色文字 */
+}
+
+
+/* --- Sidebar 寬度設定 --- */
+
+/* 白天模式 */
+html[data-theme='light'] {
+  --doc-sidebar-width: 600px;
+  /* 你想改成多少px，這裡調整 */
+}
+
+/* 暗黑模式 */
+html[data-theme='dark'] {
+  --doc-sidebar-width: 600px;
+  /* 保持一致，或暗黑可以再微調 */
+}
+
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.footer-social-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer__title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* 保險，讓文字本身也置中 */
+  color: #fff;
+  margin-bottom: 2rem;
+  /* 這裡可以自由調整間距大小 */
+}
+
+/* FOOTER 社群分享按鈕 */
+
+[data-theme='dark'] .footer-social-icons a {
+  background-color: #333333;
+}
+
+[data-theme='dark'] .footer-social-icons a img {
+  filter: brightness(0%) invert(1);
+  opacity: 0.9;
+  /* 微微降低亮度，看起來更舒服 */
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social-icons a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.footer-social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social-icons a {
+  background-color: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.footer-social-icons a img {
+  width: 24px;
+  height: 24px;
+}

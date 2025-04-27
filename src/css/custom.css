@@ -1,0 +1,609 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* --- 全站字體設定 --- */
+:root {
+    --ifm-font-family-base: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif;
+
+    /* 主色調 (橘黃棕藍灰系) */
+    --ifm-color-primary: #F2A51E;
+    --ifm-color-primary-dark: #E39025;
+    --ifm-color-primary-darker: #8D7051;
+    --ifm-color-primary-darkest: #5B4937;
+    --ifm-color-primary-light: #7B7E74;
+    --ifm-color-primary-lighter: #BAC7E5;
+    --ifm-color-primary-lightest: #BAC7E5;
+
+    --docusaurus-highlighted-code-line-bg: rgba(242, 165, 30, 0.2);
+
+    /* Sidebar 寬度設定 */
+    --doc-sidebar-width: 600px;
+}
+
+/* --- 白天模式 (背景、Navbar、文字) --- */
+html[data-theme='light'] {
+    --ifm-background-color: #ffffff;
+    --ifm-navbar-background-color: #7B7E74;
+    --ifm-navbar-link-color: #ffffff;
+}
+
+/* --- 暗黑模式 (背景、Navbar、文字) --- */
+html[data-theme='dark'] {
+    --ifm-background-color: #242222;
+    --ifm-navbar-background-color: #7B7E74;
+    --ifm-navbar-link-color: #ffffff;
+    --ifm-color-primary: #F2A51E;
+    --ifm-color-primary-dark: #E39025;
+    --ifm-color-primary-darker: #8D7051;
+    --ifm-color-primary-darkest: #5B4937;
+    --ifm-color-primary-light: #7B7E74;
+    --ifm-color-primary-lighter: #BAC7E5;
+    --ifm-color-primary-lightest: #BAC7E5;
+    --docusaurus-highlighted-code-line-bg: rgba(242, 165, 30, 0.2);
+}
+
+/* --- Hero 區塊樣式 --- */
+[data-theme='light'] .hero--primary {
+    background-color: #ffffff;
+    color: #000000;
+    background-size: cover;
+    background-position: center;
+}
+
+[data-theme='dark'] .hero--primary {
+    background-color: #242222;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+}
+
+.heroBanner {
+    padding: 6rem 2rem;
+}
+
+.heroWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heroLeft {
+    flex: 1;
+    text-align: left;
+}
+
+.heroRight {
+    flex: 1;
+    text-align: left;
+}
+
+.heroTitle {
+    font-family: 'Anton', sans-serif;
+    font-size: 300px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.heroSubtitle {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.heroDeclaration {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.heroDeclarationText {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+    /* 預設淺色字 */
+}
+
+/* 手機版自動縮小字體 */
+@media (max-width: 768px) {
+    .heroDeclarationText {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/* --- 宣言區塊樣式 --- */
+[data-theme='light'] .heroDeclarationTitle {
+    color: #b8860b;
+}
+
+[data-theme='dark'] .heroDeclarationTitle {
+    color: #ffcc00;
+}
+
+.heroDeclarationTitle {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.heroDeclaration {
+    padding: 2rem 0;
+    background-color: var(--ifm-background-color);
+    text-align: center;
+}
+
+.heroDeclarationText {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ifm-font-color-base);
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.heroDeclarationText br {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* --- RWD 響應式設計 --- */
+@media (max-width: 1200px) {
+
+    .heroTitle {
+        font-size: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .heroWrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .heroLeft,
+    .heroRight {
+        flex: none;
+    }
+
+    .heroTitle {
+        font-size: 150px;
+    }
+
+    .heroSubtitle {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+    }
+}
+
+/* --- 主體區域 --- */
+body {
+    font-family: var(--ifm-font-family-base);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.footer-spacer {
+    height: 80vh;
+    /* 調整這個值以確保內容足夠推動footer到底部 */
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    /* 不可見但佔空間 */
+}
+
+
+
+html[data-theme='light'] body {
+    color: #333333;
+}
+
+html[data-theme='dark'] body {
+    color: #E6EEF9;
+}
+
+.main-wrapper {
+    background-color: var(--ifm-background-color);
+}
+
+/* --- 卡片樣式 --- */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 鏈結與按鈕 hover 效果 --- */
+a:hover {
+    color: var(--ifm-color-primary-dark);
+}
+
+.button:hover {
+    background-color: var(--ifm-color-primary-dark);
+    color: #ffffff;
+}
+
+/* --- Footer 樣式 --- */
+.footer {
+    background-color: #7B7E74 !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer a,
+.footer p,
+.footer li {
+    color: #ffffff !important;
+}
+
+.footer-social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer__title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* --- Footer 社群分享按鈕 --- */
+.footer-social-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social-icons a {
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.footer-social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.footer-social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+[data-theme='dark'] .footer-social-icons a {
+    background-color: #333333;
+}
+
+[data-theme='dark'] .footer-social-icons a img {
+    filter: brightness(0%) invert(1);
+    opacity: 0.9;
+}
+
+/* --- 提示框樣式 --- */
+html[data-theme='light'] .alert {
+    background-color: #BAC7E5;
+    border-left: 4px solid #F2A51E;
+    color: #333333;
+}
+
+html[data-theme='dark'] .alert {
+    background-color: #282a36;
+    border-left: 4px solid #F2A51E;
+    color: #E6EEF9;
+}
+
+/* --- Code Block 樣式 --- */
+html[data-theme='light'] .codeBlockContainer_Ckt0 {
+    --prism-background-color: #BAC7E5;
+}
+
+html[data-theme='light'] pre.prism-code {
+    background-color: #BAC7E5 !important;
+}
+
+/* --- Blog 標籤樣式 --- */
+html[data-theme='light'] .tags_jXut a {
+    background-color: #7B7E74;
+    color: #ffffff;
+    border: none;
+}
+
+/* --- 搜尋結果樣式 --- */
+html[data-theme='light'] .resultItem_eGY2 {
+    background-color: #BAC7E5;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .resultItem_eGY2 {
+    background-color: #282a36;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='light'] .resultTitle_OJPc,
+html[data-theme='light'] .resultLink_sJG6 {
+    color: #282a36;
+}
+
+/* 首頁立即探索知識庫按鈕 */
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    /* 水平置中 */
+    align-items: center;
+    /* 上下置中（可選）*/
+    margin: 5rem auto;
+    /* 上下間距＋左右自動置中 */
+    padding: 1rem 2rem;
+    background-color: #F2A51E;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    width: fit-content;
+    /* 按鈕寬度跟內容剛好貼合 */
+}
+
+.buttonContainer:hover {
+    background-color: #d38e1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.buttonContainer a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* --- 新聞區塊樣式 --- */
+.newsSection {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* --- 新聞區塊佈局 --- */
+.news-section {
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 1400px;
+    /* 增加最大寬度 */
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 電腦版4列 */
+    gap: 1rem;
+}
+
+/* 卡片樣式 */
+.news-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+}
+
+/* 標題樣式 */
+.news-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* 分隔線 */
+.news-divider {
+    height: 2px;
+    background-color: var(--ifm-color-primary);
+    margin-bottom: 1rem;
+}
+
+/* 列表樣式 */
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.news-list li::before {
+    content: "•";
+    color: var(--ifm-color-primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.news-list a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* 白天模式樣式 */
+html[data-theme='light'] .news-card {
+    background-color: #f0f7ff;
+    /* 淺藍色底 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(186, 199, 229, 0.5);
+}
+
+html[data-theme='light'] .news-list a {
+    color: #333;
+}
+
+html[data-theme='light'] .news-list a:hover {
+    color: var(--ifm-color-primary-light);
+}
+
+/* 黑夜模式樣式 */
+html[data-theme='dark'] .news-card {
+    background-color: #2a2c3a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(242, 165, 30, 0.2);
+}
+
+html[data-theme='dark'] .news-list a {
+    color: #e6eef9;
+}
+
+html[data-theme='dark'] .news-list a:hover {
+    color: var(--ifm-color-primary);
+}
+
+/* 互動效果 */
+html[data-theme='light'] .news-card:hover {
+    background-color: #BAC7E5 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .news-card:hover {
+    background-color: #7B7E74 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-color: var(--ifm-color-primary);
+}
+
+/* 註釋樣式 */
+html[data-theme='light'] .news-subtext {
+    font-size: 0.8rem;
+    /* 比主標題小一階 */
+    color: var(--ifm-color-primary-light);
+    /* 用主色系的淺色，符合整體風格 */
+    margin-top: 0.25rem;
+    /* 跟主標題有微小距離 */
+    line-height: 1.4;
+    /* 保持輕鬆的閱讀感 */
+    font-weight: 400;
+    /* 不加粗，與標題區分層次 */
+    text-align: left;
+    /* 保持靠左對齊，跟上面標題一致 */
+    word-break: break-word;
+    /* 超長網址、英文會自動換行 */
+}
+
+html[data-theme='dark'] .news-subtext {
+    font-size: 0.8rem;
+    /* 比主標題小一階 */
+    color: var(--ifm-color-primary-dark);
+    /* 用主色系的淺色，符合整體風格 */
+    margin-top: 0.25rem;
+    /* 跟主標題有微小距離 */
+    line-height: 1.4;
+    /* 保持輕鬆的閱讀感 */
+    font-weight: 400;
+    /* 不加粗，與標題區分層次 */
+    text-align: left;
+    /* 保持靠左對齊，跟上面標題一致 */
+    word-break: break-word;
+    /* 超長網址、英文會自動換行 */
+}
+
+/* 響應式設計 */
+@media (max-width: 1200px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 平板3列 */
+    }
+}
+
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 小平板2列 */
+    }
+}
+
+@media (max-width: 576px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+        /* 手機1列 */
+    }
+}
+
+html[data-theme='light'] .menu__link {
+    color: #333333 !important;
+}
+
+html[data-theme='dark'] .menu__link {
+    color: #ffffff !important;
+}
+
+html[data-theme='light'] .menu__link:hover {
+    color: #f5a623 !important;
+    /* 滑鼠移上去可以變橘色或其他點綴色 */
+}
+
+html[data-theme='dark'] .menu__link:hover {
+    color: #f5a623 !important;
+    /* 滑鼠移上去可以變橘色或其他點綴色 */
+}
+
+
+.navbar-sidebar__backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 背景半透明黑，點其他地方關閉用 */
+}
+
+html[data-theme='light'] .menu {
+    background-color: #f0f0f0;
+    /* 如果內部還有需要一致，也可以同步調整 */
+}
+
+html[data-theme='dark'] .menu {
+    background-color: #242222;
+    /* 如果內部還有需要一致，也可以同步調整 */
+}
